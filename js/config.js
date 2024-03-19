@@ -1,1 +1,1 @@
-export const ENDPOINT = 'https://pokeapi.co/api/v2';
+export const ENDPOINT = 'https://localhost:3000/pokemon';
