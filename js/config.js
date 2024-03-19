@@ -1,1 +1,1 @@
-export const ENDPOINT = 'http://localhost:3000/articles';
+export const ENDPOINT = 'https://pokeapi.co/api/v2/';
