@@ -2,14 +2,16 @@ import PokemonProvider from "../../utils/PokemonProvider.js";
 
 export default class PokemonAll {
     async render () {
-        let pokemons = (await PokemonProvider.fetchPokemons(10)).results
+        let pokemons = await PokemonProvider.fetchPokemons(800);
         console.log(pokemons)
         let view =  `
             <h2>Pokemon listing</h2>
-            <div>
+            <div class="container">
                 ${ pokemons.map(pokemon => 
                     `
-                    <h1>${pokemon.name}</h1>
+                    <div class="box ${ pokemon.type[0] }">
+                        <h3>${pokemon.name.french}</h3>
+                    </div>
                     `
                 ).join('\n ')}
             </div>

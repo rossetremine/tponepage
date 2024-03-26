@@ -1,0 +1,87 @@
+
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+/* Types de Pokémon */
+.Grass {
+    color: green;
+}
+
+.Fire {
+    color: red;
+}
+
+.Water {
+    color: blue;
+}
+
+.Electric {
+    color: yellow;
+}
+
+.Normal {
+    color: brown;
+}
+
+.Fighting {
+    color: maroon;
+}
+
+.Flying {
+    color: skyblue;
+}
+
+.Poison {
+    color: purple;
+}
+
+.Ground {
+    color: sandybrown;
+}
+
+.Rock {
+    color: gray;
+}
+
+.Bug {
+    color: limegreen;
+}
+
+.Ghost {
+    color: darkviolet;
+}
+
+.Steel {
+    color: silver;
+}
+
+.Psychic {
+    color: fuchsia;
+}
+
+.Ice {
+    color: lightblue;
+}
+
+.Dragon {
+    color: darkorange;
+}
+
+.Dark {
+    color: black;
+}
+
+.Fairy {
+    color: pink;
+}

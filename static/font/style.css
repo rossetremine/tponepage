@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Flexo';
+    src: local('Flexo Medium'), local('Flexo-Medium'),
+        url('Flexo-Medium.woff2') format('woff2'),
+        url('Flexo-Medium.woff') format('woff'),
+        url('Flexo-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+*{
+	font-family : 'Flexo';
+}
