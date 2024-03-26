@@ -3,6 +3,7 @@ import PokemonProvider from "../../utils/PokemonProvider.js";
 export default class PokemonAll {
     async render () {
         let pokemons = await PokemonProvider.fetchPokemons(800);
+
         console.log(pokemons)
         let view =  `
             <h2>Pokemon listing</h2>
