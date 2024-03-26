@@ -10,7 +10,7 @@ export default class PokemonProvider {
            }
        };
        try {
-           const response = await fetch(`${ENDPOINT}?limit=${limit}`, options)
+           const response = await fetch(`${ENDPOINT}?_limit=${limit}`, options)
            const json = await response.json();
            return json
        } catch (err) {
