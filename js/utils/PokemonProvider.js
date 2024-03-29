@@ -19,10 +19,10 @@ export default class PokemonProvider {
        try {
            const response = await fetch(`${ENDPOINT}?_limit=${limit}`, options)
            const json = await response.json();
-           for (let i = 0; i < json.length; i++) {
-               let pokeApiData = await this.fetchPokeApi(i + 1);
-               json[i].pokeApiData = pokeApiData
-           }
+        //    for (let i = 0; i < json.length; i++) {
+        //        let pokeApiData = await this.fetchPokeApi(i + 1);
+        //        json[i].pokeApiData = pokeApiData
+        //    }
            return json
        } catch (err) {
            console.log('Error getting documents', err)
@@ -40,8 +40,8 @@ export default class PokemonProvider {
            const response = await fetch(`${ENDPOINT}/` + id, options)
            const json = await response.json();
 
-            let pokeApiData = await this.fetchPokeApi(id);
-            json.pokeApiData = pokeApiData
+            // let pokeApiData = await this.fetchPokeApi(id);
+            // json.pokeApiData = pokeApiData
 
            return json
        } catch (err) {
