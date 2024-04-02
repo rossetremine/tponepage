@@ -9,7 +9,11 @@ export default class PokemonAll {
     async render() {
         let pokemons = await PokemonProvider.fetchPokemons(400);
         let view = `
-            <h2>Pokedex</h2>
+            <div class="top">
+                <h2>Pokedex</h2>
+                <input type="text" class="input" placeholder="Rechercher un pokemon..." id="myinput">
+            </div>
+            
             <div class='container'>
                 ${pokemons.map(pokemon =>
                     `
@@ -70,6 +74,22 @@ export default class PokemonAll {
                 handleFavorite(pokemonId);
             });
         });
+
+        let myInput = document.getElementById("myinput");
+
+        myInput.addEventListener("keyup", function() {
+            let value = this.value.toLowerCase();
+            console.log(value);
+            let containerHeadings = document.querySelectorAll(".box h3");
+            containerHeadings.forEach(function(heading) {
+                if (heading.textContent.toLowerCase().indexOf(value) > -1) {
+                    heading.parentNode.style.display = "flex";
+                } else {
+                    heading.parentNode.style.display = "none";
+                }
+            });
+        });
+          
     }
 
 
