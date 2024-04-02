@@ -23,4 +23,6 @@ export default class PokemonAll {
         `;
         return view
     }
+    async afterRender() {
+    }
 }

@@ -92,6 +92,14 @@ header nav ul {
     background-color: var(--color);
 }
 
+.favoriteButton{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    width: fit-content;
+    align-self: flex-end;
+}
+
 /* Types de Pokémon */
 .Grass {
     --color: green;
