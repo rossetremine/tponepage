@@ -21,4 +21,7 @@ export default class PokemonDetail {
         `;
         return view
     }
+
+    async afterRender() {
+    }
 }

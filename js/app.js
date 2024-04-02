@@ -2,15 +2,17 @@ import Accueil from './views/pages/Accueil.js';
 import PokemonAll from './views/pages/PokemonAll.js';
 import PokemonDetail from './views/pages/PokemonDetail.js';
 import Error404 from './views/pages/Error404.js';
+import Favoris from './views/pages/Favoris.js';
 
 import Utils from './utils/Utils.js';
+
 
 // List of supported routes. Any url other than these routes will throw a 404 error
 const routes = {
     '/'                     : Accueil
     , '/pokemons'           : PokemonAll
     , '/pokemons/:id'       : PokemonDetail
-    // , '/favoris'            : Favoris
+    , '/favoris'            : Favoris
 };
 
 // The router code. Takes a URL, checks against the list of supported routes and then renders the corresponding content page.
@@ -29,6 +31,7 @@ const router = async () => {
     let page = routes[parsedURL] ? new routes[parsedURL] : Error404
     
     content.innerHTML = await page.render();
+    await page.afterRender();
 }
 
 // Listen on hash change:

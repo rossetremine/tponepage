@@ -6,4 +6,7 @@ export default class Error404 {
         `;
         return view
     }
+
+    async afterRender() {
+    }
 }
