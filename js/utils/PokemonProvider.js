@@ -9,7 +9,7 @@ export default class PokemonProvider {
         return data
     }
 
-    static fetchPokemons = async (limit = 10) => {
+    static fetchPokemons = async (limit = 10, offset = 0) => {
         const options = {
            method: 'GET',
            headers: {
@@ -17,7 +17,7 @@ export default class PokemonProvider {
            }
        };
        try {
-           const response = await fetch(`${ENDPOINT}/pokemons?_limit=${limit}`, options)
+           const response = await fetch(`${ENDPOINT}/pokemons?_limit=${limit}&_start=${offset}`, options)
            const json = await response.json();
         //    for (let i = 0; i < json.length; i++) {
         //        let pokeApiData = await this.fetchPokeApi(i + 1);

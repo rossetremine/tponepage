@@ -15,7 +15,7 @@ export default class PokemonDetail {
         this.ratingData = await PokemonProvider.getPokemonRating(this.pokemon.id)
         let view =  `
             <h2>${this.pokemon.name.french}</h2>
-            <img src="${this.pokemon.pokeApiData.sprites.front_default}" alt="${this.pokemon.name.french}">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.pokemon.id}.png" alt="${this.pokemon.name.french}">
             <br>
             Type principal: ${this.pokemon.type[0]}
             ${this.pokemon.type[1] ? `<br>Type secondaire: ${this.pokemon.type[1]}` : ''}
@@ -42,9 +42,6 @@ export default class PokemonDetail {
             </form>
         `;
         return view
-    }
-
-    async afterRender() {
     }
     async afterRender () {
         document.getElementById('ratingForm').addEventListener('submit', this.rate)
