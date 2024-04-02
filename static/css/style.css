@@ -22,6 +22,41 @@ header nav ul {
     padding: 20px 200px;
 }
 
+.titre{
+    text-align: center;
+    margin: 20px 0;
+    font-size: large;
+}
+
+.rotate {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.separator {
+    border-bottom: 3px solid #e7e7e7;
+    margin: 20px 0;
+    border-radius: 50px;
+}
+
+.random-pokemon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#randomPokemonButton{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#randomPokemonButton svg{
+    width: 5em;
+    height: 5em;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -36,6 +71,7 @@ header nav ul {
     padding: 10px;
     gap: 5px;
     border-radius: 10px;
+    width: fit-content;
 }
 
 
@@ -98,6 +134,31 @@ header nav ul {
     cursor: pointer;
     width: fit-content;
     align-self: flex-end;
+}
+
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    min-height: 50px;
+    gap: 10px;
+}
+
+
+.input{
+    padding:8px;
+    display:block;
+    border-bottom:1px solid #ccc;
+    width:20em;
+    border:1px solid #ccc;
+    border-radius:32px;
+}
+
+.input:focus {
+    outline-width: 0;
 }
 
 /* Types de Pokémon */

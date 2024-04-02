@@ -78,4 +78,21 @@ export default class PokemonProvider {
            console.log('Error getting documents', err)
        }
     }
+
+    static fetchRandomPokemon = async () => {
+        const randomId = Math.floor(Math.random() * 400) + 1;
+        const options = {
+           method: 'GET',
+           headers: {
+               'Content-Type': 'application/json'
+           }
+       };
+       try {
+           const response = await fetch(`${ENDPOINT}/` + randomId, options)
+           const json = await response.json();
+           return json
+       } catch (err) {
+           console.log('Error getting documents', err)
+       }
+    }
 }

@@ -5,7 +5,10 @@ export default class Favoris {
         let favs = JSON.parse(localStorage.getItem('favs')) || [];
         let pokemons = await PokemonProvider.fetchPokemons(400);
         let view =  `
-            <h2>Favoris</h2>
+            <div class="top">
+                <h2>Favoris</h2>
+                <input type="text" class="input" placeholder="Rechercher un pokemon..." id="myinput">
+            </div>
             <div class='container'>
             ${ pokemons.map(pokemon => {
                 if (favs.includes(pokemon.id)) {
@@ -45,6 +48,21 @@ export default class Favoris {
         favoriteButtons.forEach(button => {
             button.addEventListener('click', () => {
                 unfav(button);
+            });
+        });
+
+        let myInput = document.getElementById("myinput");
+
+        myInput.addEventListener("keyup", function() {
+            let value = this.value.toLowerCase();
+            console.log(value);
+            let containerHeadings = document.querySelectorAll(".box h3");
+            containerHeadings.forEach(function(heading) {
+                if (heading.textContent.toLowerCase().indexOf(value) > -1) {
+                    heading.parentNode.style.display = "flex";
+                } else {
+                    heading.parentNode.style.display = "none";
+                }
             });
         });
     }
