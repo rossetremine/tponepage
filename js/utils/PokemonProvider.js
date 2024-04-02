@@ -18,12 +18,7 @@ export default class PokemonProvider {
        };
        try {
            const response = await fetch(`${ENDPOINT}/pokemons?_limit=${limit}&_start=${offset}`, options)
-           const json = await response.json();
-        //    for (let i = 0; i < json.length; i++) {
-        //        let pokeApiData = await this.fetchPokeApi(i + 1);
-        //        json[i].pokeApiData = pokeApiData
-        //    }
-           return json
+           return await response.json()
        } catch (err) {
            console.log('Error getting documents', err)
        }
@@ -88,7 +83,7 @@ export default class PokemonProvider {
            }
        };
        try {
-           const response = await fetch(`${ENDPOINT}/` + randomId, options)
+           const response = await fetch(`${ENDPOINT}/pokemons/` + randomId, options)
            const json = await response.json();
            return json
        } catch (err) {
