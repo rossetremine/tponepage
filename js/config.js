@@ -1,1 +1,1 @@
-export const ENDPOINT = 'http://localhost:3000/pokemons';
+export const ENDPOINT = 'http://localhost:3000';
